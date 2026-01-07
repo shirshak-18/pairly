@@ -146,3 +146,71 @@ module.exports.signUp = async (req, res) => {
     });
   }
 };
+
+module.exports.verifyOtp = async (req, res) => {
+  try {
+    const email = req.body.email;
+    const user = await User.findOne({
+      email,
+    });
+
+    if (user) {
+      return res.status(400).send({
+        success: false,
+        message: "user already exists",
+      });
+    }
+
+    const optHolder = await Otp.find({
+      email,
+    });
+
+    if (optHolder.length === 0) {
+      return res.status(400).json({
+        message: "Otp Expierd or Invalid",
+      });
+    }
+
+    const rightOtpFind = optHolder[optHolder.length - 1];
+    const validUser = await bcrypt.compare(req.body.otp, rightOtpFind.otp);
+    if (!validUser) {
+      return res.status(403).json({
+        message: "Invalid User",
+      });
+    }
+    const password = await bcrypt.hash(req.body.password, 10);
+    const username = email.split("@")[0];
+
+    if (rightOtpFind.email === req.body.email && validUser) {
+      const user = new User({
+        email,
+        username,
+        password,
+        hasphoto: false,
+      });
+      const token = user.generateJWT();
+      const result = await user.save();
+      const OTPDelete = await Otp.deleteMany({
+        email: rightOtpFind.email,
+      });
+
+      return res.status(200).send({
+        success: true,
+        message: "User created successfully",
+        token,
+        user: result,
+      });
+    } else {
+      return res.status(400).send({
+        success: false,
+        message: "invalid otp",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
