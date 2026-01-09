@@ -58,5 +58,6 @@ userSchema.methods.generateJWT = function () {
       expiresIn: "7d",
     }
   );
+  return token;
 };
 module.exports.User = model("User", userSchema);

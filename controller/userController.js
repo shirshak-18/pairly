@@ -118,11 +118,11 @@ module.exports.signUp = async (req, res) => {
     };
 
     const otp = new Otp({ email, otp: OTP });
-    console.log(otp.otp, typeof otp.otp);
+
     const salt = await bcrypt.genSalt(10);
-    console.log(salt, typeof salt);
+
     otp.otp = await bcrypt.hash(otp.otp, salt);
-    console.log(otp.otp);
+
     const rseult = await otp.save();
     await transporter
       .sendMail(mailOptions)
@@ -211,6 +211,44 @@ module.exports.verifyOtp = async (req, res) => {
     res.status(400).send({
       success: false,
       message: "Server Error",
+    });
+  }
+};
+
+module.exports.signIn = async (req, res) => {
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User does not exist",
+      });
+    }
+    const hashedPassword = await user.password;
+    const isValid = await bcrypt.compare(req.body.password, hashedPassword);
+    if (user && isValid) {
+      const token = user.generateJWT();
+      res.status(200).send({
+        success: true,
+        message: "User logged in",
+        user: {
+          _id: user._id,
+          email: user.email,
+          username: user.username,
+        },
+        token,
+      });
+    } else {
+      res.send({
+        success: false,
+        message: "Incorrect email or password",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      success: false,
+      message: "Some error occured",
     });
   }
 };
