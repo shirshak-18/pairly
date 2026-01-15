@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { User } = require("../model/userModel");
 
-module.exports.updatrProfile = async (req, res) => {
+module.exports.updateProfile = async (req, res) => {
   try {
     const { name, gender } = req.fields;
     const { photo } = req.files;
@@ -45,6 +45,36 @@ module.exports.updatrProfile = async (req, res) => {
     return res.status(500).send({
       success: false,
       message: "error updating the profile",
+    });
+  }
+};
+
+module.exports.getProfiles = async (req, res) => {
+  try {
+    //pagination
+    const page = req.query.page ? parseInt(req.query.page) : 1;
+    const limit = 9;
+    const skip = (page - 1) * limit;
+    const users = await User.find({})
+      .select("name email gender bio username hasphoto")
+      .sort({ createdAt: -1 })
+      .skip(skip)
+      .limit(limit);
+
+    const totalUsers = await User.countDocuments();
+    const hasMore = totalUsers > page * limit;
+
+    res.status(200).json({
+      success: true,
+      message: "profiles fetched successfully!",
+      users,
+      hasMore,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: "error in getting profiles",
     });
   }
 };
