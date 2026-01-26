@@ -14,6 +14,16 @@ const {
   getSingleProfile,
   getProfilePhoto,
 } = require("../controller/profileController");
+
+const {
+  sendDm,
+  addToCrushList,
+  removeFromCrush,
+  deleteDms,
+  getCrushDetails,
+  getDms,
+  updatePrivate,
+} = require("../controller/crushController");
 const formidable = require("express-formidable");
 const userMiddleware = require("../middleware/authMiddleware");
 router = Router();
@@ -29,4 +39,20 @@ router.get("/profiles/:username", userMiddleware, getSingleProfile);
 router.get("/profile-photo/:pid", userMiddleware, getProfilePhoto);
 router.get("/search", userMiddleware, searchProfiles);
 router.get("/recent-users", userMiddleware, getRecentUsers);
+
+router.post("/message/:username", userMiddleware, sendDm);
+router.put("/like/:username", userMiddleware, addToCrushList);
+router.delete("/unlike/:pid", userMiddleware, removeFromCrush);
+router.put("/delete/dms/:pid", userMiddleware, deleteDms);
+router.get("/crush/:pid", userMiddleware, getCrushDetails);
+router.get("/dms/:pid", userMiddleware, getDms);
+router.put("/private/:userId", userMiddleware, updatePrivate);
+
+router.get("/user-auth", userMiddleware, (req, res) => {
+  res.status(200).send({
+    ok: true,
+    success: true,
+    message: "You are Authorized",
+  });
+});
 module.exports = router;
