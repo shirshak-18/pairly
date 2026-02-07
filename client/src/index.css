@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+body {
+  background-color: #151128;
+  color: white;
+  overflow-x: hidden;
+}
+
+.gradient_bg {
+  background: rgb(253, 47, 166);
+  background: linear-gradient(
+    148deg,
+    rgba(253, 47, 166, 1) 0%,
+    rgba(248, 75, 77, 1) 61%
+  );
+}
+.gradient_bg2 {
+  background: rgb(253, 47, 166);
+  background: linear-gradient(
+    148deg,
+    rgba(248, 75, 77, 1) 0%,
+    rgba(253, 47, 166, 1) 61%
+  );
+}
+
+.text_shadow {
+  text-shadow: 0px -1px 7px rgba(255, 255, 255, 0.6);
+}

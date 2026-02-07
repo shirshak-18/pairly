@@ -1,0 +1,30 @@
+.profile-img {
+  max-height: 200px; /* Default size */
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+}
+
+p {
+  font-size: large;
+}
+
+.side-heading {
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .profile-img {
+    max-height: 100px; /* Adjust size for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-img {
+    max-height: 80px; /* Adjust size for small screens */
+  }
+  .container {
+    max-width: 400px;
+  }
+}
