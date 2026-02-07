@@ -56,7 +56,7 @@ const Profiles = () => {
   ]);
 
   useEffect(() => {
-    document.title = "Profiles @Kitty-Love 💕";
+    document.title = "Profiles @Pairly";
 
     window.addEventListener("scroll", () => setsuggestionBox(false));
 

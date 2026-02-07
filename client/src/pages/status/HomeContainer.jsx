@@ -14,21 +14,22 @@ const HomeContainer = () => {
   return (
     <div className="pt-[100px] px-3">
       <p className="lead text-center">
-        A place where we GVPians can talk, express and laugh together,
-        everything
+        A private space to connect, express, and discover — everything
         <strong> anonymously</strong>.
       </p>
-      <h1 className="text-5xl font-bold text-center text-pink-600 mt-5">
-        Welcome to KITTY LOVE
+      <h1 className="text-5xl font-bold text-center text-white mt-5">
+        Welcome to <span className="text-blue-600">Pairly</span>
       </h1>
-      <p className="text-center mb-5 mt-3">
-        A social networking and dating site made espeacially for GVPians. (A
-        facebook for GVP, but better)
+
+      <p className="text-center text-slate-400 mt-3">
+        Connect, express, and discover — anonymously and securely.
       </p>
-      <p className="lead text-center">
-        A place where you are free to express yourself. Don't worry it's secure
-        and anonymous 🤫
+
+      <p className="text-center text-slate-500 mt-2">
+        Pairly is a private social and dating platform built for meaningful
+        conversations, genuine connections, and safe self-expression.
       </p>
+
       {/*  */}
       <div className="flex justify-center h-[64] my-5 text-xl space-x-2 flex-wrap max-[1300px]:flex-col items-center">
         <div className="flex">
@@ -50,22 +51,6 @@ const HomeContainer = () => {
             className="w-64 h-64 rounded-md max-[800px]:w-[150px] max-[800px]:h-[150px]"
           />
         </div>
-
-        {/* <div className="mt-8 text-center flex-1">
-          <h3 className="text-3xl font-bold text-pink-600">Spread the Love</h3>
-          <p className="text-gray-600 mt-2">
-            "Love is in the air! Sign up now and find your special someone at
-            GVP"
-          </p>
-          <p className="text-gray-600 mt-2">
-            "A simple crush could lead to a beautiful relationship. Don't miss
-            out!"
-          </p>
-          <p className="text-gray-600 mt-2">
-            "Find your match, make a connection, and start a story worth
-            telling."
-          </p>
-        </div> */}
       </div>
       {/*  */}
 
@@ -73,7 +58,7 @@ const HomeContainer = () => {
         className="gradient_bg flex justify-center p-3 rounded-md mb-5 font-bold text-3xl"
         to={"/signup"}
       >
-        Register Now
+        Join Pairly
       </NavLink>
 
       <div className="flex flex-col items-center space-y-8">
@@ -85,9 +70,9 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              Share your thoughts and express yourself anonymously, no one will
-              ever know it was you. Add replies and likes to messages to keep
-              the conversation going.
+              Share your thoughts freely with anonymous messaging. Connect
+              without pressure, judgment, or identity — just honest
+              conversations.
             </p>
           </div>
           <img
@@ -109,8 +94,8 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              Add up to 3 people to your crush list. Update your crushes anytime
-              from your dashboard and know who else is crushing on you.
+              Save up to three profiles privately. Get notified when interest is
+              mutual and take the next step with confidence.
             </p>
           </div>
         </div>
@@ -122,8 +107,8 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              View profiles of all GVPians on the site. Check out their crush
-              counts, display pictures, and public messages.
+              Explore verified profiles, view shared interests, and discover
+              people you may connect with.
             </p>
           </div>
           <img
@@ -146,8 +131,8 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              Send anonymous messages directly to your crush. Express your
-              feelings without revealing your identity.
+              Send anonymous messages directly to someone you like and break the
+              ice without revealing your identity.
             </p>
           </div>
         </div>
@@ -160,8 +145,7 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              Find GVPians by searching their name, roll number or college mail
-              ID.
+              Find people easily using name, roll number, or college email ID.
             </p>
           </div>
           <img
@@ -183,8 +167,8 @@ const HomeContainer = () => {
             </h2>
 
             <p className="text-gray-600">
-              If you and your crush have mutual feelings, both of you will be
-              notified via email. Take the next step and start chatting!
+              When feelings match, both users receive notifications and can
+              start chatting instantly.
             </p>
           </div>
         </div>
@@ -193,13 +177,13 @@ const HomeContainer = () => {
       <div className="my-8 mt-20 text-center">
         <h3 className="text-2xl font-bold text-red-600">Important Note</h3>
         <p className="text-gray-600 mt-2">
-          Please don't use the application to express anger or hatred towards
-          each other. The application was developed for spreading love.
+          Pairly is built to encourage respectful interactions and meaningful
+          connections.
         </p>
         <p className="text-gray-600 mt-2">
-          If you find any message disturbing or abusive, kindly report it to{" "}
-          <a href="mailto:kittylove.team@gmail.com" className="text-blue-500">
-            kittylove.team@gmail.com
+          Any misuse or abusive behavior can be reported at{" "}
+          <a href="mailto:pairly.dev@gmail.com" className="text-blue-500">
+            pairly.dev@gmail.com
           </a>{" "}
           with an image of the message.
         </p>

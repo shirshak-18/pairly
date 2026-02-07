@@ -47,7 +47,7 @@ const Dashboard = () => {
       }
     };
     getDms();
-    document.title = "My dashboard @Kitty-Love 💕";
+    document.title = "My dashboard @Pairly";
   }, []);
 
   useEffect(() => {

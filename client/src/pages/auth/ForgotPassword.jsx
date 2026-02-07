@@ -57,7 +57,7 @@ const ForgotPassword = () => {
   };
 
   useEffect(() => {
-    document.title = "Forgot Password @Kitty-Love 💕";
+    document.title = "Forgot Password @Pairly";
   }, []);
 
   return (

@@ -40,7 +40,7 @@ const Signin = () => {
   };
 
   useEffect(() => {
-    document.title = "Login @Kitty-Love 💕";
+    document.title = "Login @Pairly";
   }, []);
 
   return (

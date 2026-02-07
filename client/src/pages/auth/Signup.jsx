@@ -67,7 +67,7 @@ const Signup = () => {
   };
 
   useEffect(() => {
-    document.title = "Register @Kitty-Love 💕";
+    document.title = "Register @Pairly";
   }, []);
 
   return (

@@ -39,7 +39,7 @@ const UserProfile = () => {
     };
 
     getSingleUser();
-    document.title = `${params.username} @Kitty-Love 💕`;
+    document.title = `${params.username} @Pairly`;
   }, [params.username]);
 
   const handleAddDm = async () => {

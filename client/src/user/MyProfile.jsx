@@ -10,7 +10,7 @@ const MyProfile = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [bio, setBio] = useState("Hey there! I'm using KittyLove");
+  const [bio, setBio] = useState("Hey there! I'm using Pairly");
   const [username, setUsername] = useState("");
   const [gender, setGender] = useState("");
   const [photo, setPhoto] = useState("");
@@ -35,7 +35,7 @@ const MyProfile = () => {
   useEffect(() => {
     getSingleUser();
     //eslint-disable-next-line
-    document.title = "My profile @Kitty-Love 💕";
+    document.title = "My profile @Pairly";
   }, []);
 
   //create product function

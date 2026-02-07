@@ -12,7 +12,7 @@ const HomePage = () => {
   const [auth, setAuth] = useAuth();
 
   useEffect(() => {
-    document.title = "Kitty-Love 💕";
+    document.title = "Pairly";
   }, []);
 
   useEffect(() => {

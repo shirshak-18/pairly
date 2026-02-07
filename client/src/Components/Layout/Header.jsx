@@ -54,10 +54,10 @@ const Header = () => {
               className="flex bg-white px-3 pb-1 rounded-md -translate-x-7"
             >
               <h1 className="text-3xl max-[1120px]:text-2xl font-bold text-[rgba(253,47,166,1)]">
-                Kitty-
+                Pairly
               </h1>
               <h1 className="text-3xl max-[1120px]:text-2xl font-bold text-[rgba(248,75,77,1)]">
-                Love💕
+                💕
               </h1>
             </Link>
             <ul

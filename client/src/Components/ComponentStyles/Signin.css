@@ -1,6 +1,6 @@
 .wrapper {
   width: 420px;
-  background: pink;
+  background: #f8fafc; /* slate-50 */
   color: #ffffff;
   border-radius: 10px;
   padding: 30px 30px;
