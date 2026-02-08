@@ -81,8 +81,14 @@ npm run dev
 
 ```bash
 
-Frontend runs on Vite (default http://localhost:5173)
-Backend runs on http://localhost:3001
+Frontend (local): http://localhost:5173
+Backend (local): http://localhost:3001
+
+Production:
+
+Frontend: https://pairly-rho.vercel.app
+Backend: https://pairly-tpvb.onrender.com
+
 
 Environment Variables
 Backend requires:
