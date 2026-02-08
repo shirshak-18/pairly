@@ -5,10 +5,21 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://pairly.vercel.app", // add your Vercel domain later
+];
+
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
-    methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.indexOf(origin) === -1) {
+        return callback(new Error("Not allowed by CORS"), false);
+      }
+      return callback(null, true);
+    },
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   }),
 );
