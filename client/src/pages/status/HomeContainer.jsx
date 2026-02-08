@@ -31,24 +31,24 @@ const HomeContainer = () => {
       </p>
 
       {/*  */}
-      <div className="flex justify-center h-[64] my-5 text-xl space-x-2 flex-wrap max-[1300px]:flex-col items-center">
+      <div className="flex justify-center h-auto my-5 text-xl space-x-2 flex-wrap max-[1300px]:flex-col items-center">
         <div className="flex">
           <img
             src={friendsImage}
             alt=""
-            className="rounded-md h-64 max-[800px]:h-[150px]"
+            className="rounded-md h-64 object-cover max-w-full max-[800px]:h-[150px]"
           />
         </div>
         <div className="flex space-x-2 max-[1300px]:mt-3">
           <img
             src={girlImage}
             alt=""
-            className="w-64 h-64 rounded-md max-[800px]:w-[150px] max-[800px]:h-[150px]"
+            className="w-64 h-64 rounded-md object-cover max-w-full max-[800px]:w-[150px] max-[800px]:h-[150px]"
           />
           <img
             src={boyImage}
             alt=""
-            className="w-64 h-64 rounded-md max-[800px]:w-[150px] max-[800px]:h-[150px]"
+            className="w-64 h-64 rounded-md object-cover max-w-full max-[800px]:w-[150px] max-[800px]:h-[150px]"
           />
         </div>
       </div>
@@ -62,7 +62,10 @@ const HomeContainer = () => {
       </NavLink>
 
       <div className="flex flex-col items-center space-y-8">
-        <h1>Features we added just for you!</h1>
+        <h1 className="text-3xl font-semibold text-slate-300">
+          Platform Features
+        </h1>
+
         <div className="bg-[#1b1735] p-3 rounded-lg shadow-lg flex items-center space-x-3 w-[70vw] max-[1000px]:w-[90vw] max-[1000px]:flex-col-reverse">
           <div className="ml-2">
             <h2 className="text-3xl font-semibold text-gray-400 mb-2">
