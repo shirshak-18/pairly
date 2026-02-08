@@ -7,7 +7,7 @@ app.use(express.json());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://pairly.vercel.app", // add your Vercel domain later
+  "https://pairly-rho.vercel.app/",
 ];
 
 app.use(
