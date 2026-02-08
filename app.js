@@ -23,6 +23,11 @@ app.use(
     credentials: true,
   }),
 );
+
+app.get("/", (req, res) => {
+  res.send("Pairly API is running 🚀");
+});
+
 app.use("/user", userRouter);
 app.use("/status", statusRouter);
 module.exports = app;
