@@ -5,8 +5,6 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 
-const cors = require("cors");
-
 app.use(
   cors({
     origin: ["http://localhost:5173", "https://pairly-rho.vercel.app"],
